@@ -11,7 +11,7 @@ Please note that this offers only the [free Chevereto version][cheveretogithub].
 
 ## Supported tags and respective Dockerfile links
 
-* `1.0.7` - Using the [`1.0.7` release](https://github.com/Chevereto/Chevereto-Free/releases/tag/1.0.7) ([1.0.7/Dockerfile](https://github.com/tanmng/docker-chevereto/blob/master/1.0.7/Dockerfile))
+* `1.0.13` - Using the [`1.0.13` release](https://github.com/Chevereto/Chevereto-Free/releases/tag/1.0.13) ([1.0.13/Dockerfile](https://github.com/tanmng/docker-chevereto/blob/master/1.0.13/Dockerfile))
 * `latest` - Using latest cloned source code from [orignal repo][cheveretogithub] ([latest/Dockerfile](https://github.com/tanmng/docker-chevereto/blob/master/latest/Dockerfile))
 * `installer` - Using latest [installer script](https://cdn.rawgit.com/Chevereto/php-repo-installer/master/index.php) ([installer/Dockerfile](https://github.com/tanmng/docker-chevereto/blob/master/installer/Dockerfile)) - Once you start the container with this image, you will have to wait for it to download latest source code from [original repo][cheveretogithub]
 
@@ -70,7 +70,7 @@ services:
   chevereto:
     depends_on:
       - db
-    image: nmtan/chevereto:1.0.7
+    image: pminnebach/chevereto:1.0.13
     restart: always
     environment:
       CHEVERETO_DB_HOST: db
@@ -104,6 +104,6 @@ docker run -it --name chevereto -d \
     -e "CHEVERETO_DB_PASSWORD=chevereto" \
     -e "CHEVERETO_DB_NAME=chevereto" \
     -e "CHEVERETO_DB_PREFIX=chv_" \
-    nmtan/chevereto
+    pminnebach/chevereto
 ```
 
