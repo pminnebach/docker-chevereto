@@ -11,9 +11,9 @@ Please note that this offers only the [free Chevereto version][cheveretogithub].
 
 ## Supported tags and respective Dockerfile links
 
-* `1.0.13` - Using the [`1.0.13` release](https://github.com/Chevereto/Chevereto-Free/releases/tag/1.0.13) ([1.0.13/Dockerfile](https://github.com/tanmng/docker-chevereto/blob/master/1.0.13/Dockerfile))
-* `latest` - Using latest cloned source code from [orignal repo][cheveretogithub] ([latest/Dockerfile](https://github.com/tanmng/docker-chevereto/blob/master/latest/Dockerfile))
-* `installer` - Using latest [installer script](https://cdn.rawgit.com/Chevereto/php-repo-installer/master/index.php) ([installer/Dockerfile](https://github.com/tanmng/docker-chevereto/blob/master/installer/Dockerfile)) - Once you start the container with this image, you will have to wait for it to download latest source code from [original repo][cheveretogithub]
+* `1.1.0` - Using the [`1.1.0` release](https://github.com/Chevereto/Chevereto-Free/releases/tag/1.1.0) ([1.1.0/Dockerfile](https://github.com/pminnebach/docker-chevereto/blob/master/1.1.0/Dockerfile))
+* `latest` - Using latest cloned source code from [orignal repo][cheveretogithub] ([latest/Dockerfile](https://github.com/pminnebach/docker-chevereto/blob/master/latest/Dockerfile))
+* `installer` - Using latest [installer script](https://cdn.rawgit.com/Chevereto/php-repo-installer/master/index.php) ([installer/Dockerfile](https://github.com/pminnebach/docker-chevereto/blob/master/installer/Dockerfile)) - Once you start the container with this image, you will have to wait for it to download latest source code from [original repo][cheveretogithub]
 
 ## Environment variables
 
@@ -70,7 +70,7 @@ services:
   chevereto:
     depends_on:
       - db
-    image: pminnebach/chevereto:1.0.13
+    image: pminnebach/chevereto:1.1.0
     restart: always
     environment:
       CHEVERETO_DB_HOST: db
@@ -81,7 +81,7 @@ services:
     volumes:
       - './images:/var/www/html/images:rw'
     ports:
-      - 80:80
+      - 81:80
 ```
 
 Once `docker-compose.yaml` is ready, you can run
@@ -104,6 +104,6 @@ docker run -it --name chevereto -d \
     -e "CHEVERETO_DB_PASSWORD=chevereto" \
     -e "CHEVERETO_DB_NAME=chevereto" \
     -e "CHEVERETO_DB_PREFIX=chv_" \
-    pminnebach/chevereto
+    pminnebach/chevereto:1.1.0
 ```
 
