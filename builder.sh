@@ -6,7 +6,7 @@
 
 # Script settings
 IMAGE_NAME="pminnebach/chevereto"
-BUILD_TAGS=( 1.0.13 latest installer )
+BUILD_TAGS=( 1.1.0 )
 
 for tag in "${BUILD_TAGS[@]}"
 do
